@@ -44,3 +44,39 @@
  > 포함되는 요소 : 자식(child)요소
  > 직계가 아닌 포함하는 요소 : 조상(ancestor)요소
  > 직계가 아닌 포함되는 요소 : 자손(descendant)요소 
+
+### Empty element (빈 요소)
+> 시작태그만 있고 종료 태그가 없는 요소
+
+### HTML 속성 (Attributes)
+> html element 에 대해 추가정보(이동경로, 파일명...)를 제공
+> 시작태그에 입력
+> 형식 : 속성이름 = "속성값"
+
+### HTML로 표현할 수 있는 컨텐츠 (웹페이지에서 표현할 수 있는 컨텐츠)
+> 텍스트
+> 멀티미디어 컨텐츠 (이미지, 비디오, 오디오)
+
+### 제목 요소 (Heading Element)
+> h1 ~ h6 (h : heading)
+
+### 단락 요소 (Paragraph Element)
+> p : Paragraph
+
+> hr : horizontal rules
+> - 단락을 구분하는 수평선을 표시
+> 빈요소
+
+> br : Line Break
+> - 같은 단락안에서 강제 줄바꿈을 할 때
+> 빈요소
+
+### 하이퍼링크 요소 (Hyper Link Element)
+> a : anchor
+
+```
+<a href="http://www.naver.com">링크텍스트(본인이 원하는 명명법으로 작성)</a>
+```
+
+> href : hyper text reference - 이동하고자 하는 목족이 위치/경로를 표시하는 속성
+> - URL(Uniform Resource Locator) : 이동하고자 하는 목적지(웹페이지)의 위치/경로 값
