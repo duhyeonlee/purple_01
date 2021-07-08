@@ -111,7 +111,7 @@
 > 북마킹 하고 싶은 곳에(보여주고 싶은 장면) <a href="#적당한 이름"> </a> 을 적는다
 > 북마크 클릭하고 싶은 곳에 <id="이미 설정된 이름"> 을 적는다. ex) <h2 id="적당한 이름">
 
-### Table Element
+### Table Element (https://www.tablesgenerator.com/html_tables)
 > table, thead, tbody, tfoot, tr, th, td, caption
 
   
@@ -137,12 +137,27 @@
 ```
 
 > table : table 의 영역을 설정
-  
+  >
 > theadm tbody, tfoot : table 데이터 그룹을 표시
-  
+  >
 > tr(table row) : 표의 가로줄
-  
+  >
   > th(table head) : 제목 칸(셀)
-  
+  >
   > td(table data) : 데이터 칸(셀)
  
+### Image element
+  > img (image)
+  > attribute : src (source), alt (alternative)
+  
+  ```
+  <img src="파일명.jpg" alt="설정하고 싶은 이름(보통 사진{이미지}의 특성으로 지음)">
+  ```
+  
+  > img 태그를 사용할 때 src, alt 속성은 반드시 사용해야 함
+  
+  ### Video Element
+  > - controls : 비디오 컨트롤 버튼 표시
+  > - loop : 비디오 반복 재생
+  > - muted : 음소거
+  > - autoplay : 자동재생 (항상 muted 와 같이 사용해야만 함)
