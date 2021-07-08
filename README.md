@@ -88,3 +88,35 @@
 > 설명 목록
 > - 주제와 설명이 한 세트로 구성되는 목록
 > - dl(설명 목록 열기&닫기), dt(설명할 단어), dd(설명문)
+
+### 북마크
+> 북마킹 하고 싶은 곳에(보여주고 싶은 장면) <a href="#적당한 이름"> </a> 을 적는다
+> 북마크 클릭하고 싶은 곳에 <id="이미 설정된 이름"> 을 적는다. ex) <h2 id="적당한 이름">
+
+### Table Element
+> table, thead, tbody, tfoot, tr, th, td, caption
+
+  
+```  
+ <table>
+   <caption></caption>
+   <thead>
+     <tr>
+       <th></th>
+     </tr>
+   </thead>
+   <tbody>
+     <tr>
+       <td></td>
+     </tr>
+   </tbody>
+   <tfoot>
+     <tr>
+       <td></td>
+     </tr>
+   </tfoot>
+  </table>
+```
+
+> table : table 의 영역을 설정
+> theadm tbody, tfoot : table 데이터 그룹을 
