@@ -147,6 +147,7 @@
   > td(table data) : 데이터 칸(셀)
  
 ### Image element
+  
   > img (image)
   > attribute : src (source), alt (alternative)
   
@@ -157,6 +158,7 @@
   > img 태그를 사용할 때 src, alt 속성은 반드시 사용해야 함
   
   ### Video Element
+  
   > attribute
   > - controls : 비디오 컨트롤 버튼 표시
   > - loop : 비디오 반복 재생
@@ -174,6 +176,7 @@
   ```
   
 ### Block/Inline Element
+  
   > 화면에 표시되는 형태를 기준으로 구분하는 방식
   
   > Block Element
@@ -185,6 +188,7 @@
   > - 인라인 요소에 포함된 콘텐츠의 너비만큼만 차지함
   
  ### 폼 요소
+  
   > input, button
   
   ```
@@ -202,6 +206,7 @@
   ```
 
 ### 인터넷 주소 체계
+  
   > IP address : 192.168.0.1
 >
 > Domain address : https://www.naver.com
@@ -211,6 +216,7 @@
   
   
   ###CSS
+  
   > CSS(Cascading Style Sheet)
 >
 > cascading : 나중에 선언한것이 최종 반영되는 CSS 특징
@@ -219,17 +225,18 @@
   
  > CSS syntax
 >
-> selector(선택자)와 declaration block(선언블록)으로 구성됨
+> - selector(선택자)와 declaration block(선언블록)으로 구성됨
 >
-> 선언블록은 중괄호 안에 여러 선언을 포함
+> - 선언블록은 중괄호 안에 여러 선언을 포함
 >
-> 각 선언에는 property와 value로 구성됨
+> - 각 선언에는 property와 value로 구성됨
   
   ```
   h1 {color:red;font-size:10px;}
   ```
   
   ### Class, id
+  
   > HTML element에 대해서 이름을 지정해줄 때 사용하는 attibute
 
 > class
@@ -255,6 +262,7 @@
   ```
   
   ### Naming 표시 방식
+  
   > - naming을 할 때 한 단어로 naming을 하기에는 한계가 있기 때문에 여러 단어로 naming을 하게될 때, 단어와 단어 사이를 구분해야 하는데 일반 문서 작성처럼 띄어쓰기로 구분할 수 없기때문에 단어와 단어 사이를 기호나 규칙에 의해서 띄어쓰지 않고 구분할 수 있도혹 함 => 표기방식
   
   > 표기방식 종류
@@ -268,5 +276,46 @@
   코딩은 왼쪽에서 오른쪽, 위에서 아래로 순서로 한다.
   ```
   
+  ### 컬러 모드/코드 정리  
   
+  > 컬러모드
+  > - RGB : Red, Green, Blue - 가산혼합
+  > - CMYK : Cyan, Magenta, Yellow, Black - 감산혼합
+  
+  > 색 표현 범위
+  > - 1 bit : 최소단위
+  ? - 8 bit = 1 byte :정보표현 최소단위
+  > - RGB 색상표현 : 각 1byte 씩 총 3byte(24bit)로 표현(트루컬러)
+  > - RGB 색상표현 값 :
+  >     - 16진수 : #0FAB78
+  >     - 10진수 : (255, 100, 121)  ※숫자범위
+  
+  ### Text CSS
+  > color
+  >
+  > - value : #000000(black), rgb(255,255,255)(white)
+  >
+  > text-align: lift, center, right, justify
+  >
+  > text-decoration : underline, line-through, overline, none
+  >
+  > text-indent : 50px(들여쓰기), -50px(내어쓰기)
+  >
+  > letter-spacing : 3px, -3px
+  >
+  > ilne-height : 24px, 1.6(배수표현)
+ 
+  ### Font CSS
+  > font-family : 'Times New Roman'(만약 띄어쓰기가 있으면 ' ' 로 묶어준다), Times, serif;
+  > - font fallback : 랜더링시 폰트를 찾지 못했을 때, 달느 폰트를 사용하도록 하는 대비책
+  > - web safe : 웹 페이지가 표시될 때 표시하고자 했던 폰트가 제대로 보일 수 있도록 선택
+  > - web font : 사용자 클라이언트에서 폰트를 찾는 것이 아니라 서버에서 폰트를 찾도록 하는 방식
+  > - google font : 웹 폰트를 사용할 수 있도록 해주는 구글 폰트 서비스
+  > - 눈누 : 한글 웹폰트 서비스
+  >
+  > font-weight : normal(regular:400), bold(700)
+  >
+  > font-size : 20px
+  >
+  > font-style : italic
   
