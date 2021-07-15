@@ -319,3 +319,136 @@
   >
   > font-style : italic
   
+  ###Box Model
+  > HTML Element에는 기본적으로 영역이 존재하는데, 이 영역에 몇가지 CSS 요소를 적용할 수 있음.
+  > - Content 영역 : width/height
+  > - padding : 안쪽 여백
+  > - border : 테두리
+  > - margin : 바깥 여백
+  
+  ###width/height
+  > width : 가로길이/너비
+  > - 기본 속성 : Block 요소는 부모요소에 맞춰지고, inline 요소는 자식요소에 맞춰짐
+  >
+  > height : 세로길이/높이
+  > - 기본 속성 : Block, Inline 모두 자식요소에 맞춰짐
+  >
+  > 단위
+  > - px : 지정된 수치값으로 고정
+  > - % : 지정된 수치값이 부모요소를 기준으로 일정 비율 크기로 정해짐
+  > - Block 요소의 경우 px, % 단위가 적용됨
+  > - Inline 요소의 경우 px, % 단위 모두 적용되지 않음
+  
+  ###Padding
+  > padding-top
+  > 
+  > padding-right
+  > 
+  > padding-bottom
+  > 
+  > padding-left
+  >
+  > padding 축약표현
+  
+  ```
+  padding:20px; : 모든 방향
+
+padding:20px 30px; : top/bottom right/left
+
+padding:20px 30px 40px : top right/left bottom
+
+padding:10px 20px 30px 40px : top right bottom left
+  ```
+  
+  ###margin
+  > padding과 사용방법이 같음
+  >
+  > margin 겹침
+  > - 위아래 연이어 배치된 박스의 위/아래 margin이 겹쳐서 큰 수치의 margin만 표현되는 것
+  
+  ###border
+  > border
+  >
+  > width, style, color
+  >
+  > top, right, bottom, left
+ 
+  ```
+  border:1px solid #fff; Ex) #aa5500 => #a50
+
+border-width:1px;
+border-style:solid;
+border-color:#fff;
+
+border-top:1px solid #fff;
+border-right:1px solid #fff;
+border-bottom:1px solid #fff;
+border-left:1px solid #fff;
+  ```
+  
+  ###박스 모델 크기 계산
+  > width/height, padding, border, margin 모두 별개의 요소
+  >
+  > Ex) 박스의 전체너비 : 300px, padding:20px 4방향, 테두리 1px 4방향, margin 30px 4방향
+  
+  ```
+  div{
+  padding:20px;
+  border:1px solid #fff;
+  margin:30px;
+  width:258px;
+}
+  ```
+  
+  > box-sizing:border-box;(기본값 : content-box)
+  
+  ```
+  div{
+  padding:20px;
+  border:1px solid #fff;
+  margin:30px;
+  width:300px;
+  box-sizing:border-box;
+}
+  ```
+  
+  ###Block, Inline에 박스모델 적용
+  > Block : 박스모델의 모든 요소가 적용 가능 Inline : 박스모델의 width/height, 상하 margin 이 제대로 적용되지 않음
+  
+  ###display 속성
+  > 박스(영역)의 block, inilne 속성을 변형
+  
+  > display : inline => 박스 속성이 inline으로 변형
+  >
+  >display : block => 박스 속성이 block으로 변형
+  >
+  >dispaly : inline-block => 박스속성이 inline 요소 속성(가로길이가 자식요소에 맞춰짐), block 요소의 속성(박스 모델 적용 가능) 모두 가지고 있음
+  
+  ###가로 배치 방법
+  > - float
+  > - flex
+  > - grid
+  
+  ###float
+  > 박스를 부유시켜서 좌우배치를 할 수 있게 함 float:left, float:right 부모 요소의 왼쪽/오른쪽을 기준으로 배치,순서 적용
+  
+  > float으로 배치시 박스가 띄워지기 때문에 위아래 인접 관계 박스들의 레이아웃이 위로 올라감 float 박스의 하단 박스에 clear:both 를 적용하면 위로 올라가지 않음 float 박스는 계속 띄워져 있기 때문에 margin 적용 같은 문제가 발생할 수 있음
+  
+  > float 박스를 부모요소로 감싸주고 float박스 하단에 높이 0 짜리 박스를 추가해서 clear:both를 적용 float 박스와 위아래 인접관계에 있던 박스들은 float 박스의 부모요소와 인접관계가 되기 때문에 float과 상관없어짐
+  
+  ```
+  HTML
+<div class="float-parent">
+  <div class="float-box">Text</div>
+  <div class="clearfix"></div>
+</div>
+
+CSS
+.float-box{
+  float:left;
+}
+.clearfix{
+  clear:both;
+}
+  ```
+ 
