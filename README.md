@@ -319,14 +319,14 @@
   >
   > font-style : italic
   
-  ###Box Model
+  ### Box Model
   > HTML Element에는 기본적으로 영역이 존재하는데, 이 영역에 몇가지 CSS 요소를 적용할 수 있음.
   > - Content 영역 : width/height
   > - padding : 안쪽 여백
   > - border : 테두리
   > - margin : 바깥 여백
   
-  ###width/height
+  ### width/height
   > width : 가로길이/너비
   > - 기본 속성 : Block 요소는 부모요소에 맞춰지고, inline 요소는 자식요소에 맞춰짐
   >
@@ -339,7 +339,7 @@
   > - Block 요소의 경우 px, % 단위가 적용됨
   > - Inline 요소의 경우 px, % 단위 모두 적용되지 않음
   
-  ###Padding
+  ### Padding
   > padding-top
   > 
   > padding-right
@@ -360,13 +360,13 @@ padding:20px 30px 40px : top right/left bottom
 padding:10px 20px 30px 40px : top right bottom left
   ```
   
-  ###margin
+  ### margin
   > padding과 사용방법이 같음
   >
   > margin 겹침
   > - 위아래 연이어 배치된 박스의 위/아래 margin이 겹쳐서 큰 수치의 margin만 표현되는 것
   
-  ###border
+  ### border
   > border
   >
   > width, style, color
@@ -386,7 +386,7 @@ border-bottom:1px solid #fff;
 border-left:1px solid #fff;
   ```
   
-  ###박스 모델 크기 계산
+  ### 박스 모델 크기 계산
   > width/height, padding, border, margin 모두 별개의 요소
   >
   > Ex) 박스의 전체너비 : 300px, padding:20px 4방향, 테두리 1px 4방향, margin 30px 4방향
@@ -415,7 +415,7 @@ border-left:1px solid #fff;
   ###Block, Inline에 박스모델 적용
   > Block : 박스모델의 모든 요소가 적용 가능 Inline : 박스모델의 width/height, 상하 margin 이 제대로 적용되지 않음
   
-  ###display 속성
+  ### display 속성
   > 박스(영역)의 block, inilne 속성을 변형
   
   > display : inline => 박스 속성이 inline으로 변형
@@ -424,12 +424,12 @@ border-left:1px solid #fff;
   >
   >dispaly : inline-block => 박스속성이 inline 요소 속성(가로길이가 자식요소에 맞춰짐), block 요소의 속성(박스 모델 적용 가능) 모두 가지고 있음
   
-  ###가로 배치 방법
+  ### 가로 배치 방법
   > - float
   > - flex
   > - grid
   
-  ###float
+  ### float
   > 박스를 부유시켜서 좌우배치를 할 수 있게 함 float:left, float:right 부모 요소의 왼쪽/오른쪽을 기준으로 배치,순서 적용
   
   > float으로 배치시 박스가 띄워지기 때문에 위아래 인접 관계 박스들의 레이아웃이 위로 올라감 float 박스의 하단 박스에 clear:both 를 적용하면 위로 올라가지 않음 float 박스는 계속 띄워져 있기 때문에 margin 적용 같은 문제가 발생할 수 있음
@@ -452,3 +452,185 @@ CSS
 }
   ```
  
+### 가상 클래스(Pseudo Class)
+  > 선택자(요소)의 상태를 정의
+  >
+  > 여러 요소중 특정 요소를 지정
+  
+  ```
+  상태 정의
+
+a:link{
+  color:red;
+}
+a:visited{
+  color:blue;
+}
+a:hover{
+  color:green;
+}
+a:active{
+  color:yellow;
+}
+
+※ a 태그의 pseudo class는 위 순서와 동일하게 코딩
+
+
+특정 요소 지정
+
+p:first-child{
+  color:red;
+}
+p:last-child{
+  color:blue;
+}
+p:nth-child(3){
+  color:green;
+}
+p:nth-child(4n){
+  color:pink;
+}
+
+  ```
+  
+  ### 가상 요소(Pseudo Element)
+  > HTML에 직접 입력하는 것이 아닌 CSS에서 랜더링 시 생성되는 가상 요소
+  
+  ```
+  div::before{
+  content:"Hello World";
+}
+
+div::after{
+  content:"";
+  display:block;
+  width:100px;
+  height:30px;
+}
+
+  ```
+  ### 투명도
+  > transparent : 투명한
+  > - 투명색 적용
+  > alpha : 추가색
+  > - rgba() 함수 사용 : color에만 투명도 적용
+  > opacity : 불투명한
+  > - Element(요소)에 투명도 적용
+  
+  ```
+  div{
+  background-color:transparent;
+}
+
+div{
+  opacity:0.7;(0.0 ~ 1.0)
+}
+
+div{
+  background-color:rgb(255,255,255); /* rgb() : rgb함수 */
+}
+
+div{
+  background-color:rgba(255,255,255,0.6); /* a : alpha (0.0 ~ 1.0) */
+}
+
+  ```
+  
+  ### 배경이미지
+  > background-image
+  > - 배경이미지 표현
+  > - 배경이미지가 반복되어 영역을 모두 채움(기본속성)
+  
+  > backgroud-repeat
+  > - repeat-x : x 방향으로만 반복
+  > - repeat-y : y 방향으로만 반복
+  > - no-repeat : 반복 없음
+  
+  > background-position
+  > - left, center, right
+  > - top, center, bottom
+  
+  ```
+  div{
+  background-position:100px 200px; /* 앞:가로방향, 뒤:세로방향 */
+}
+  ```
+  
+  > background-attachment
+  > - 배경 고정
+  
+  ```
+  div{
+  background-attachment:fixed;
+}
+  ```
+  
+  ※ 배경색, 배경이미지 모두 content영역과 padding 영역에 적용됨(border, margin에는 적용이 안됨)
+  
+  ### 이미지 표현 방법
+  > 콘텐트로 표현
+  > - img 태그로 표현
+  > 디자인요소로 표현
+  > - background로 표현
+  > IR(Image Replacement) 기법
+  > - 화면에 표시는 이미지로 표시, 실제 콘텐트는 텍스트의 형태
+  > 가상요소를 사용해서 배경표현 기법
+  > - 가상요소에 디자인 이미지를 적용해서 화면에 표시
+  
+  ### flex 
+  > 기존의 float, position 방식을 사용하지 않고 웹페이지의 레이아웃을 구성할 수 있게 함
+  
+  ```
+  <div class="flex-container">
+  <div>1</div>
+  <div>2</div>
+  <div>3</div>
+</div>
+  ```
+  
+  > flex의 박스 배치 관련 property들은 부모요소에 적용시켜줌
+  
+  ### css 상속
+  
+  > css는 html element의 부모요소에 적용된 css 속성이 자식요소에도 적용 상속되는 css property를 활용하면 코드 길이를 줄일 수 있음
+  
+  ### 반응형 웹
+  > OSMU : One Source Multi Use => One Source : HTML source => Multi Use : CSS source
+  > 해상도
+  > - 모바일 실제 해상도와 CSS 해상도 구분
+  > @media
+  
+  ```
+  @media screen and (해상도 범위){
+  해당 해상도의 스타일
+}
+  ```
+  
+  > 해상도 범위, 변경점(break point)
+  > - 변경점의 기준 해상도
+  > - - 모바일 : 360px ~ 480px(640px)
+  > - - 태블릿 : 720px ~ 1024px
+  > - - PC : 1024px ~
+  
+  ```
+  닫힌 범위
+@media screen and (min-width:360px) and (max-width:480px){}
+@media screen and (min-width:720px) and (max-width:1024px){}
+@media screen and (min-width:1024px){}
+
+열린 범위
+/* pc CSS */
+div{font-size:15px;}
+
+/* tablet CSS */
+@media screen and (max-width:1024px){
+  div{font-size:13px;}
+}
+
+/* smart phone CSS */
+@media screen and (max-width:640px){
+  div{font-size:11px;}
+}
+  ```
+  
+  
